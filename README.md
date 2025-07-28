@@ -1,4 +1,4 @@
-# colorpallete
+# colorpalette
 
 Приложение для создания палитр т.е. наборов цветов 
 Application for creating palettes e.g. sets of colors

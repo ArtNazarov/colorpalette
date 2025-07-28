@@ -1,4 +1,4 @@
-program colorpallete;
+program colorpalette;
 
 {$mode objfpc}{$H+}
 
