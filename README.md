@@ -3,6 +3,10 @@
 Приложение для создания палитр т.е. наборов цветов 
 Application for creating palettes e.g. sets of colors
 
+Screenshot Снимок экрана
+![colorpalette](https://dl.dropbox.com/scl/fi/pmdqlgfj3sb27asil3o9k/_20250728_120507.png?rlkey=apy8jrcpfccapcw5vqijrufe1&st=h0b4jwxw)
+
+
 Функции программы:
 - добавление цвета в палитру
 - установка значения согласно коду цвета
