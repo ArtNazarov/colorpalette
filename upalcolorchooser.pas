@@ -7,7 +7,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ShellCtrls, StdCtrls,
-  Grids, ExtCtrls, Types, IniFiles;
+  Grids, ExtCtrls, Types, IniFiles, Interfaces, LCLType;
 
 type
 
@@ -40,9 +40,12 @@ type
     procedure btnAddColorToPalClick(Sender: TObject);
     procedure sgPalDrawCell(Sender: TObject; aCol, aRow: Integer;
       aRect: TRect; aState: TGridDrawState);
+    procedure sgPalKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
 
   public
+
+    procedure deleteRow(ARow : Integer);
 
   end;
 
@@ -224,6 +227,26 @@ begin
     sgPal.Canvas.TextRect(aRect, aRect.Left + 2, aRect.Top + 2, cellText);
   end;
 end;
+
+procedure TfrmPalEditor.sgPalKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+   if Key = VK_DELETE then
+  begin
+    deleteRow(sgPal.Row);
+    Key := 0; // consume the key
+  end;
+end;
+
+procedure TfrmPalEditor.deleteRow(ARow: Integer);
+  var
+    i: Integer;
+  begin
+    if (ARow < sgPal.FixedRows) or (ARow >= sgPal.RowCount) then Exit; // avoid deleting fixed rows or invalid rows
+    for i := ARow to sgPal.RowCount - 2 do
+      sgPal.Rows[i].Assign(sgPal.Rows[i + 1]);
+    sgPal.RowCount := sgPal.RowCount - 1;
+  end;
 
 
 end.
