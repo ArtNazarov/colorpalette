@@ -14,6 +14,7 @@ Screenshot Снимок экрана
 - сохранение палитры в файл
 - загрузка палитры из файла
 - подсветка ячейки таблицы соответствующим цветом
+- удаление строки по нажатию delete
 
 Program functions:
 - adding a color to the palette
@@ -22,6 +23,7 @@ Program functions:
 - saving the palette to a file
 - loading the palette from a file
 - highlighting the table cell with the corresponding color
+- remove row by pressing Delete key
 
 Примечание: цвета сохраняются в кодах RGB формата `'#rrggbb'`
 Note: colors are stored in RGB codes of the format `'#rrggbb'`
