@@ -22,6 +22,7 @@ type
     ColorDialog1: TColorDialog;
     edColorAlias: TEdit;
     edColorValue: TEdit;
+    lbAboutApp: TLabel;
     lbColorAlias: TLabel;
     lbColorValue: TLabel;
     lbPal: TLabel;
