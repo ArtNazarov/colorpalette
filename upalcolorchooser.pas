@@ -108,6 +108,8 @@ var
   Section: string;
   fileName: string;
 begin
+  SaveDialog1.Filter := 'Palette files (*.pal)|*.pal';
+  SaveDialog1.DefaultExt := 'pal';  // Note: no leading dot here
   if not SaveDialog1.Execute then Exit;
 
   fileName := SaveDialog1.FileName; // Или любой другой путь/имя файла
@@ -138,6 +140,8 @@ var
   Section: string;
   fileName: string;
 begin
+  OpenDialog1.Filter := 'Palette files (*.pal)|*.pal';
+  OpenDialog1.DefaultExt := 'pal';  // Note: no leading dot here
   if not OpenDialog1.Execute then Exit;
   fileName := OpenDialog1.FileName; // Имя файла должно совпадать с тем, что используется при сохранении
   ini := TIniFile.Create(fileName);
