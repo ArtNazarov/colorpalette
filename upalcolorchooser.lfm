@@ -35,6 +35,7 @@ object frmPalEditor: TfrmPalEditor
       DefaultColWidth = 220
       FixedCols = 0
       FixedRows = 0
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goSmoothScroll]
       RowCount = 0
       TabOrder = 0
       OnDrawCell = sgPalDrawCell
