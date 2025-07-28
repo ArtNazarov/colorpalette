@@ -1,0 +1,192 @@
+object frmPalEditor: TfrmPalEditor
+  Left = 435
+  Height = 457
+  Top = 145
+  Width = 1019
+  Caption = 'Редактор палитр'
+  ClientHeight = 457
+  ClientWidth = 1019
+  Position = poScreenCenter
+  LCLVersion = '4.2.0.0'
+  object panPal: TPanel
+    Left = 170
+    Height = 407
+    Top = 0
+    Width = 849
+    Align = alClient
+    ClientHeight = 407
+    ClientWidth = 849
+    TabOrder = 0
+    object lbPal: TLabel
+      Left = 1
+      Height = 18
+      Top = 1
+      Width = 847
+      Align = alTop
+      Caption = 'Палитра, набор цветов'
+    end
+    object sgPal: TStringGrid
+      Left = 1
+      Height = 387
+      Top = 19
+      Width = 847
+      Align = alClient
+      ColCount = 3
+      DefaultColWidth = 220
+      FixedCols = 0
+      FixedRows = 0
+      RowCount = 0
+      TabOrder = 0
+      OnDrawCell = sgPalDrawCell
+    end
+  end
+  object panActionsWithPalFile: TPanel
+    Left = 0
+    Height = 50
+    Top = 407
+    Width = 1019
+    Align = alBottom
+    ClientHeight = 50
+    ClientWidth = 1019
+    TabOrder = 1
+    object btnSaveToFile: TButton
+      Left = 847
+      Height = 48
+      Top = 1
+      Width = 171
+      Align = alRight
+      Caption = 'Сохранение палитры...'
+      TabOrder = 0
+      OnClick = btnSaveToFileClick
+    end
+    object btnReadFromFile: TButton
+      Left = 676
+      Height = 48
+      Top = 1
+      Width = 171
+      Align = alRight
+      Caption = 'Прочитать из файла...'
+      TabOrder = 1
+      OnClick = btnReadFromFileClick
+    end
+  end
+  object panColorDetails: TPanel
+    Left = 0
+    Height = 407
+    Top = 0
+    Width = 170
+    Align = alLeft
+    ClientHeight = 407
+    ClientWidth = 170
+    TabOrder = 2
+    object lbColorAlias: TLabel
+      Left = 1
+      Height = 18
+      Top = 1
+      Width = 168
+      Align = alTop
+      Caption = 'Псевдоним цвета'
+    end
+    object edColorAlias: TEdit
+      Left = 1
+      Height = 25
+      Top = 19
+      Width = 168
+      Align = alTop
+      TabOrder = 0
+      Text = 'clBlack'
+    end
+    object Shape1: TShape
+      Left = 1
+      Height = 243
+      Top = 112
+      Width = 168
+      Align = alClient
+      Shape = stStar
+    end
+    object btnAddColorToPal: TButton
+      Left = 1
+      Height = 25
+      Top = 381
+      Width = 168
+      Align = alBottom
+      Caption = 'Добавить к палитре'
+      TabOrder = 1
+      OnClick = btnAddColorToPalClick
+    end
+    object btnSelectColor: TButton
+      Left = 1
+      Height = 25
+      Top = 44
+      Width = 168
+      Align = alTop
+      Caption = 'Выбор цвета'
+      TabOrder = 2
+      OnClick = btnSelectColorClick
+    end
+    object lbColorValue: TLabel
+      Left = 1
+      Height = 18
+      Top = 69
+      Width = 168
+      Align = alTop
+      Caption = 'Код цвета'
+    end
+    object edColorValue: TEdit
+      Left = 1
+      Height = 25
+      Top = 87
+      Width = 168
+      Align = alTop
+      TabOrder = 3
+      Text = '#00FF00'
+    end
+    object btnSetColor: TButton
+      Left = 1
+      Height = 26
+      Top = 355
+      Width = 168
+      Align = alBottom
+      Caption = 'Установить цвет'
+      TabOrder = 4
+      OnClick = btnSetColorClick
+    end
+  end
+  object ColorDialog1: TColorDialog
+    Color = clBlack
+    CustomColors.Strings = (
+      'ColorA=000000'
+      'ColorB=000080'
+      'ColorC=008000'
+      'ColorD=008080'
+      'ColorE=800000'
+      'ColorF=800080'
+      'ColorG=808000'
+      'ColorH=808080'
+      'ColorI=C0C0C0'
+      'ColorJ=0000FF'
+      'ColorK=00FF00'
+      'ColorL=00FFFF'
+      'ColorM=FF0000'
+      'ColorN=FF00FF'
+      'ColorO=FFFF00'
+      'ColorP=FFFFFF'
+      'ColorQ=C0DCC0'
+      'ColorR=F0CAA6'
+      'ColorS=F0FBFF'
+      'ColorT=A4A0A0'
+    )
+    Left = 600
+    Top = 216
+  end
+  object SaveDialog1: TSaveDialog
+    DefaultExt = '.*.pal'
+    Left = 544
+    Top = 176
+  end
+  object OpenDialog1: TOpenDialog
+    DefaultExt = '.*.pal'
+    Left = 600
+    Top = 176
+  end
+end
